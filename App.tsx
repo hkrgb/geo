@@ -14,7 +14,7 @@ const App: React.FC = () => {
 
   const getLocation = useCallback(() => {
     if (!navigator.geolocation) {
-      setError("您的浏览器不支持地理定位功能");
+      setError("您的瀏覽器不支援地理定位功能");
       return;
     }
 
@@ -37,12 +37,12 @@ const App: React.FC = () => {
               setData(response.data);
               setSources(response.sources);
             } else {
-              setError("无法解析地理资讯，请重试");
+              setError("無法解析地理資訊，請重試");
               console.warn("Raw response:", response.rawText);
             }
           })
           .catch((err) => {
-            setError("无法连接到 AI 服务: " + (err instanceof Error ? err.message : String(err)));
+            setError("無法連接到 AI 服務: " + (err instanceof Error ? err.message : String(err)));
           })
           .finally(() => {
             setLoading(false);
@@ -50,7 +50,7 @@ const App: React.FC = () => {
       },
       (err) => {
         setLoading(false);
-        setError("无法获取位置权限: " + err.message);
+        setError("無法獲取位置權限: " + err.message);
       },
       {
         enableHighAccuracy: true,
@@ -97,7 +97,7 @@ const App: React.FC = () => {
           <div className="bg-red-500/20 border border-red-500/50 p-4 rounded-xl text-red-100 mb-6 text-sm">
             <i className="fas fa-exclamation-circle mr-2"></i>
             {error}
-            <button className="underline ml-2" onClick={getLocation}>重试</button>
+            <button className="underline ml-2" onClick={getLocation}>重試</button>
           </div>
         )}
 
@@ -126,7 +126,7 @@ const App: React.FC = () => {
             {/* Sources / Attribution */}
             {sources.length > 0 && (
               <div className="mt-8 pt-6 border-t border-white/10">
-                <h4 className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">资料来源</h4>
+                <h4 className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">資料來源</h4>
                 <ul className="space-y-1">
                   {sources.map((source, idx) => (
                     <li key={idx}>
@@ -150,7 +150,7 @@ const App: React.FC = () => {
         {!loading && !data && !error && (
           <div className="text-center text-gray-400 py-20">
             <div className="text-6xl mb-4 opacity-30"><i className="fas fa-map-marked"></i></div>
-            <p>点击右上角刷新按钮获取您的当前位置资讯</p>
+            <p>點擊右上角刷新按鈕獲取您的當前位置資訊</p>
           </div>
         )}
       </main>

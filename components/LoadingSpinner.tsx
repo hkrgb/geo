@@ -10,7 +10,7 @@ const LoadingSpinner: React.FC = () => {
           <i className="fas fa-satellite-dish text-xl animate-pulse"></i>
         </div>
       </div>
-      <p className="text-blue-200 animate-pulse font-medium">正如火如荼分析地理资讯...</p>
+      <p className="text-blue-200 animate-pulse font-medium">正為您分析地理資訊...</p>
     </div>
   );
 };

@@ -12,7 +12,7 @@ const AttractionList: React.FC<AttractionListProps> = ({ attractions }) => {
     <div className="space-y-4">
       <h3 className="text-xl font-bold flex items-center">
         <i className="fas fa-map-marked-alt mr-2 text-pink-400"></i>
-        附近景点
+        附近景點
       </h3>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {attractions.map((place, index) => (

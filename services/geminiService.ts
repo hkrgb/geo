@@ -17,32 +17,32 @@ export const fetchLocationInsights = async (coords: Coordinates): Promise<Gemini
     // We cannot force JSON schema when using tools (Google Search/Maps), 
     // so we prompt strongly for a JSON code block and parse it manually.
     const prompt = `
-      我现在的位置是 Latitude: ${coords.latitude}, Longitude: ${coords.longitude}.
+      我現在的位置是 Latitude: ${coords.latitude}, Longitude: ${coords.longitude}.
       
-      请利用 Google Search 和 Google Maps 帮我完成以下任务:
-      1. 确认我现在所在的具体地名和街道 (Address & Location Name).
-      2. 搜寻此位置现在的实时天气 (Temperature, Condition, Wind Speed, Wind Direction).
-      3. 搜寻附近 4-5 个值得去的景点或地标.
-      4. 对于每个景点，请计算或估计它相对于我现在的方位的方向 (例如: 东北, 南, 西北) 和大约距离.
+      請利用 Google Search 和 Google Maps 幫我完成以下任務 (請使用繁體中文/廣東話回答):
+      1. 確認我現在所在的具體地名和街道 (Address & Location Name).
+      2. 搜尋此位置現在的實時天氣 (Temperature, Condition, Wind Speed, Wind Direction).
+      3. 搜尋附近 4-5 個值得去的景點或地標.
+      4. 對於每個景點，請計算或估計它相對於我現在的方位的方向 (例如: 東北, 南, 西北) 和大約距離.
 
-      请以纯 JSON 格式输出结果，格式如下 (不要包含任何 markdown 格式以外的文字):
+      請以純 JSON 格式輸出結果，格式如下 (不要包含任何 markdown 格式以外的文字):
       \`\`\`json
       {
-        "locationName": "当前地名",
-        "address": "当前完整地址",
+        "locationName": "當前地名",
+        "address": "當前完整地址",
         "weather": {
           "temperature": "25°C",
-          "condition": "多云",
+          "condition": "多雲",
           "windSpeed": "15 km/h",
           "windDirection": "西北"
         },
         "attractions": [
           {
-            "name": "景点名称",
-            "description": "简短描述 (20字以内)",
-            "bearing": "方向 (例如: 东北)",
-            "distance": "距离 (例如: 500m)",
-            "type": "类别 (例如: 公园, 餐厅, 博物馆)"
+            "name": "景點名稱",
+            "description": "簡短描述 (20字以內)",
+            "bearing": "方向 (例如: 東北)",
+            "distance": "距離 (例如: 500m)",
+            "type": "類別 (例如: 公園, 餐廳, 博物館)"
           }
         ]
       }

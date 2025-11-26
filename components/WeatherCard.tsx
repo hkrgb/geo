@@ -22,7 +22,7 @@ const WeatherCard: React.FC<WeatherCardProps> = ({ weather }) => {
       
       <div className="flex items-center justify-between relative z-10">
         <div>
-          <h3 className="text-gray-300 text-sm font-medium mb-1"><i className="fas fa-temperature-high mr-2"></i>实时天气</h3>
+          <h3 className="text-gray-300 text-sm font-medium mb-1"><i className="fas fa-temperature-high mr-2"></i>實時天氣</h3>
           <div className="text-5xl font-bold tracking-tighter">{weather.temperature}</div>
           <div className="text-lg text-blue-200 mt-1">{weather.condition}</div>
         </div>
@@ -37,7 +37,7 @@ const WeatherCard: React.FC<WeatherCardProps> = ({ weather }) => {
             <i className="fas fa-wind"></i>
           </div>
           <div>
-            <div className="text-xs text-gray-400">风速</div>
+            <div className="text-xs text-gray-400">風速</div>
             <div className="font-semibold">{weather.windSpeed}</div>
           </div>
         </div>
@@ -46,7 +46,7 @@ const WeatherCard: React.FC<WeatherCardProps> = ({ weather }) => {
             <i className="fas fa-compass"></i>
           </div>
           <div>
-            <div className="text-xs text-gray-400">风向</div>
+            <div className="text-xs text-gray-400">風向</div>
             <div className="font-semibold">{weather.windDirection}</div>
           </div>
         </div>
