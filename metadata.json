@@ -1,0 +1,7 @@
+{
+  "name": "GeoGuide AI",
+  "description": "An intelligent location assistant that shows your current location, local weather, and nearby attractions with bearings and distances using Gemini with Google Search and Maps.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
